@@ -1,24 +1,15 @@
+// Constructors
+
 var FoodItem = function (name, calories, vegan, glutenFree, citrusFree){
 	this.name = name;
 	this.calories = calories;
 	this.vegan = vegan;
 	this.glutenFree = glutenFree;
 	this.citrusFree = citrusFree;
-	// this.a = for (var key in this) {
-								
-	// 						}
 	this.toString = function(){
 		return this.name +' '+  this.calories +' '+ this.vegan +' '+ this.glutenFree +' '+ this.citrusFree;
 	}
 };
-
-var egg = new FoodItem('egg', 180, false, true, true);
-var apple = new FoodItem('apple', 80, true, true, true);
-var hamburger = new FoodItem('hamburger', 600, false, false, true);
-
-egg.toString();
-apple.toString();
-hamburger.toString();
 
 var Drink = function (name, description, price, ingredients){
 	this.name = name;
@@ -70,6 +61,11 @@ var Customer = function (dietaryPreference) {
 	}
 }
 
+// FoodItem instances (used in ingredients)
+var egg = new FoodItem('egg', 180, false, true, true);
+var apple = new FoodItem('apple', 80, true, true, true);
+var hamburger = new FoodItem('hamburger', 600, false, false, true);
+
 // Drink instances
 var appleJuice = new Drink ('apple juice', 'juiced apples', 2.00, [apple]);
 var proteinShake = new Drink ('protein shake', 'hamburger and egg shake', 7.00, [hamburger, egg]);
@@ -79,11 +75,22 @@ var proteinShake = new Drink ('protein shake', 'hamburger and egg shake', 7.00, 
 var appleBurger = new Plate ('apple burger', 'apple with a burger in it!', 10.00, [apple, hamburger]);
 var eggBurger = new Plate ('egg burger', 'hamburger with an egg in it (burger came first)', 8.00, [hamburger, egg]);
 
+// Order instances
 var order1 = new Order ([appleBurger, eggBurger, appleJuice]);
+
+//Menu instances
 var menu1 = new Menu ([appleJuice, proteinShake, appleBurger, eggBurger]);
 
+//Restaurant Instances
 var restaurant1 = new Restaurant ('Apple Burgers and More', 'We sell the ORIGINAL apple burger, eggs, and notorious shakes!', menu1);
 
+// Customer Instances
 var customer1 = new Customer ('glutenFree, citrusFree');
 var customer2 = new Customer ('vegan');
 
+
+
+// Console.log toString calls on FoodItems (part i, step 3)
+console.log(egg.toString());
+console.log(apple.toString());
+console.log(hamburger.toString());
