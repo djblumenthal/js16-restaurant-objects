@@ -19,6 +19,27 @@ var Drink = function (name, description, price, ingredients){
 	this.toString = function(){
 		return this.name +' '+  this.description +' '+ this.price +' '+ this.ingredients.join(', ');
 	}
+	this.isVegan = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].vegan){
+				return false;
+			}
+		}return true;
+	}	
+	this.isGlutenFree = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].glutenFree){
+				return false;
+			}
+		}return true;
+	}	
+	this.isCitrusFree = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].citrusFree){
+				return false;
+			}
+		}return true;
+	}
 }
 
 var Plate = function (name, description, price, ingredients){
@@ -26,6 +47,27 @@ var Plate = function (name, description, price, ingredients){
 	this.description = description;
 	this.price = price;
 	this.ingredients = ingredients;
+	this.isVegan = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].vegan){
+				return false;
+			}
+		}return true;
+	}	
+	this.isGlutenFree = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].glutenFree){
+				return false;
+			}
+		}return true;
+	}
+	this.isCitrusFree = function(ingredients){
+		for (var i=0; i<this.ingredients.length; i++){
+			if (!this.ingredients[i].citrusFree){
+				return false;
+			}
+		}return true;
+	}
 	this.toString = function(){
 		return this.name +' '+  this.description +' '+ this.price +' '+ this.ingredients.join(', ');
 	}
