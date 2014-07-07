@@ -1,11 +1,14 @@
 var FoodItem = function (name, calories, vegan, glutenFree, citrusFree){
-	this.name = name,
-	this.calories = calories,
-	this.vegan = vegan,
-	this.glutenFree = glutenFree,
-	this.citrusFree = citrusFree,
+	this.name = name;
+	this.calories = calories;
+	this.vegan = vegan;
+	this.glutenFree = glutenFree;
+	this.citrusFree = citrusFree;
+	// this.a = for (var key in this) {
+								
+	// 						}
 	this.toString = function(){
-		return console.log(this.name +' '+  this.calories +' '+ this.vegan +' '+ this.glutenFree +' '+ this.citrusFree);
+		return this.name +' '+  this.calories +' '+ this.vegan +' '+ this.glutenFree +' '+ this.citrusFree;
 	}
 };
 
@@ -18,35 +21,53 @@ apple.toString();
 hamburger.toString();
 
 var Drink = function (name, description, price, ingredients){
-	this.name = name,
-	this.description = description,
-	this.price = price,
-	this.ingredients = ingredients
+	this.name = name;
+	this.description = description;
+	this.price = price;
+	this.ingredients = ingredients;
+	this.toString = function(){
+		return this.name +' '+  this.description +' '+ this.price +' '+ this.ingredients.join(', ');
+	}
 }
 
 var Plate = function (name, description, price, ingredients){
-	this.name = name,
-	this.description = description,
-	this.price = price,
-	this.ingredients = ingredients
+	this.name = name;
+	this.description = description;
+	this.price = price;
+	this.ingredients = ingredients;
+	this.toString = function(){
+		return this.name +' '+  this.description +' '+ this.price +' '+ this.ingredients.join(', ');
+	}
 }
 
 var Order = function (plates){
-	this.plates = plates
+	this.plates = plates;
+	this.toString = function(){
+		return this.plates.join();
+	}
 }
 
 var Menu = function (plates){
-	this.plates = plates
+	this.plates = plates;
+	this.toString = function(){
+		return this.plates.join();
+	}
 }
 
 var Restaurant = function (name, description, menu){
-	this.name = name,
-	this.description = description,
-	this.menu = menu
+	this.name = name;
+	this.description = description;
+	this.menu = menu;
+	this.toString = function(){
+		return console.log(this.name + ' ' + this.description + ' ' + this.menu);
+	}
 }
 
 var Customer = function (dietaryPreference) {
-	this.dietaryPreference = dietaryPreference
+	this.dietaryPreference = dietaryPreference;
+	this.toString = function(){
+		return console.log(this.dietaryPreference);
+	}
 }
 
 // Drink instances
